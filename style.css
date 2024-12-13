@@ -1,0 +1,183 @@
+* {
+    font-family: 'calibri', sans-serif;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-info h4 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.product-info p {
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #d9534f;
+}
+
+.buy-now-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.buy-now-btn:hover {
+    background-color: #0056b3;
+}
+
+.row .col-md-4 {
+    display: flex;
+    flex-direction: column;
+}
+
+.row .col-md-4 .product-card {
+    flex-grow: 1;
+}
+
+footer {
+    padding: 50px;
+}
+
+.landing-section {
+    background-color: #f2f2f2;
+    padding: 50px 0;
+
+}
+
+.landing-content {
+    text-align: center;
+}
+
+.landing-section h1 {
+    font-weight: 450;
+}
+
+.landing-section p {
+    font-weight: 450;
+}
+
+.input-group {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.btn-outline-secondary {
+    border-left: 1px solid #ccc;
+}
+
+.sb {
+    margin-right: 12px;
+}
+
+.responsive-banner {
+    background-image: url('./images/bgg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.responsive-logo {
+    height: 145px;
+    position: absolute;
+    left: 20px;
+}
+
+.responsive-text {
+    color: white;
+    margin: 0;
+    text-align: center;
+    font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+    .responsive-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .btnoj {
+        margin-top: 10px;
+    }
+
+    .responsive-logo {
+        position: static;
+        margin-bottom: 20px;
+        height: 145px;
+    }
+
+    .responsive-text {
+        font-size: 2rem;
+        position: static;
+    }
+}
+
+@media (max-width: 480px) {
+    .responsive-logo {
+        height: 100px;
+    }
+
+    .responsive-text {
+        font-size: 2rem;
+    }
+
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.navbar {
+    background-image: url('./images/bgh3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.navbar .nav-link {
+    color: #fff;
+}
+
+.navbar .nav-link:hover {
+    color: #f8d7da;
+}
+
+@media (max-width: 1200px) {
+    .btnoj {
+        margin-left: uto;
+    }
+}

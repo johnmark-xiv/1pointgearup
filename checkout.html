@@ -1,0 +1,660 @@
+<script type="text/javascript">
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "5a84b383-af80-43a3-a6b7-92b39e6fba94";
+    (function () {
+        d = document;
+        s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <style>
+        @font-face {
+            font-family: iimpact;
+            src: url(fonts/impact.ttf);
+        }
+
+        .navbar-brand {
+            font-family: iimpact;
+        }
+
+        .address-card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: border-color 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .address-card:hover {
+            border-color: #007bff;
+        }
+
+        .default-address {
+            border: 2px solid #007bff;
+        }
+
+        .navbar {
+            background-image: url('./images/bgh3a.jpg');
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="landing.html"> <img src="./images/11.png" alt="1Point Gear Up">1Point Gear
+                Up</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#aboutModal">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#featuresModal">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#contactModal">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <h1 class="text-center mb-3 mt-5" style="font-family: iimpact;">
+        Checkout</h1>
+    <!-- modal ng navbar -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="aboutModalLabel">About Us</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>"Order your favorite Sports attire online with ease, delivered straight to your door."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="featuresModal" tabindex="-1" aria-labelledby="featuresModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="featuresModalLabel">Features</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>Intuitive user interface</li>
+                        <li>Seamless integration with other platforms</li>
+                        <li>24/7 customer support</li>
+                        <li>Regular updates and new features</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Email: onepointsportswear4@gmail.com</p>
+                    <p>Phone: +639120236893</p>
+                    <p>Address: Sto. Tomas City, Batangas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container my-5">
+        <div class="container my-5">
+
+            <!-- address cards -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="address-card" id="addressCard1" data-bs-toggle="modal" data-bs-target="#addressModal"
+                        data-address="1">
+                        <h5 class="fw-bold">Address 1</h5>
+                        <p class="card-text">
+                            <strong id="cardFullName1"></strong><br>
+                            <span id="cardPhoneNumber1"></span><br>
+                            <span id="cardFullAddress1"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="address-card" id="addressCard2" data-bs-toggle="modal" data-bs-target="#addressModal"
+                        data-address="2">
+                        <h5 class="fw-bold">Address 2</h5>
+                        <p class="card-text">
+                            <strong id="cardFullName2"></strong><br>
+                            <span id="cardPhoneNumber2"></span><br>
+                            <span id="cardFullAddress2"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="mt-4">
+                <h4>Order Summary</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- insertan -->
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="mt-4">
+                <h4>Payment Method</h4>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="cod" checked>
+                    <label class="form-check-label" for="cod">Cash on Delivery (COD)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="gcash">
+                    <label class="form-check-label" for="gcash">Gcash</label>
+                </div>
+            </div>
+
+            <div class="mt-4 d-flex justify-content-end gap-2">
+                <button class="btn btn-secondary" onclick="goBack()">Back</button>
+                <a href="done.html" class="btn btn-success btn-lg">Place Order</a>
+            </div>
+        </div>
+
+        <script>
+            function saveSelectedAddress() {
+                const selectedAddress = document.querySelector('input[name="address"]:checked').value;
+                localStorage.setItem('defaultAddress', JSON.stringify({
+                    address: selectedAddress
+                }));
+            }
+
+            document.getElementById('proceedButton').addEventListener('click', saveSelectedAddress);
+        </script>
+
+
+        <!-- modal ng address -->
+        <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addressModalLabel">Edit Address</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addressForm">
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="fullName" placeholder="Full Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phoneNumber" class="form-label">Phone Number</label>
+                                <input type="text" class="form-control" id="phoneNumber"
+                                    placeholder="(+63) 999 999 9999" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fullAddress" class="form-label">Address (Region, Province, City, Barangay,
+                                    Street, Postal Code)</label>
+                                <textarea class="form-control" id="fullAddress" rows="3"
+                                    placeholder="Enter full address" required></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="setDefaultBtn">Select</button>
+                        <button type="button" class="btn btn-success" id="saveBtn">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light py-3 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-muted">&copy; 2024 1Point Gear Up All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                        <li class="list-inline-item"><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <a href="https://www.facebook.com/1pointsportswear" target="_blank">
+                    <i class="fab fa-facebook fa-2x"></i>
+                </a>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#locationModal" style="margin-left: 10px;">
+                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- modal ng location -->
+    <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="locationModalLabel">Our Location</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>We are located at:</p>
+                    <p><strong>General Malvar Avenue, One Point Sportswear, Barangay 04, City of Sto. Tomas,
+                            Batangas</strong></p>
+                    <a href="https://maps.app.goo.gl/NKKhA3Y4MMJLHZh87" target="_blank" class="btn btn-primary">
+                        View on Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+    <script>
+        let currentAddressCard;
+
+        function goBack() {
+            localStorage.removeItem('product_summary');
+
+            window.history.back();
+        }
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const orderSummaryBody = document.querySelector(".table tbody");
+            const saveBtn = document.getElementById("saveBtn");
+            const setDefaultBtn = document.getElementById("setDefaultBtn");
+
+            const fullNameInput = document.getElementById("fullName");
+            const phoneNumberInput = document.getElementById("phoneNumber");
+            const fullAddressInput = document.getElementById("fullAddress");
+
+            const addressCard1 = document.getElementById("addressCard1");
+            const addressCard2 = document.getElementById("addressCard2");
+
+            const cardFullName1 = document.getElementById("cardFullName1");
+            const cardFullName2 = document.getElementById("cardFullName2");
+            const cardFullAddress1 = document.getElementById("cardFullAddress1");
+            const cardFullAddress2 = document.getElementById("cardFullAddress2");
+
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const checkoutItem = JSON.parse(localStorage.getItem("checkoutItem"));
+
+            function renderCheckoutItems() {
+                orderSummaryBody.innerHTML = "";
+                let total = 0;
+
+                if (checkoutItem && cart.length === 0) {
+                    const itemPrice = parseFloat(checkoutItem.price.replace("₱", ""));
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                <td>${checkoutItem.name} (${checkoutItem.size}, ${checkoutItem.gender})</td>
+                <td>₱${itemPrice.toFixed(2)}</td>
+                <td>${checkoutItem.quantity}</td>
+            `;
+                    orderSummaryBody.appendChild(row);
+                    total += itemPrice * checkoutItem.quantity;
+                }
+
+                cart.forEach(item => {
+                    const itemPrice = parseFloat(item.price.replace("₱", ""));
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                <td>${item.name}</td>
+                <td>₱${itemPrice.toFixed(2)}</td>
+                <td>${item.quantity}</td>
+            `;
+                    orderSummaryBody.appendChild(row);
+                    total += itemPrice * item.quantity;
+                });
+
+                const totalRow = document.createElement("tr");
+                totalRow.innerHTML = `
+            <th>Total</th>
+            <th colspan="2">₱${total.toFixed(2)}</th>
+        `;
+                orderSummaryBody.appendChild(totalRow);
+            }
+
+            renderCheckoutItems();
+
+            let editingAddressCard;
+
+            addressCard1.addEventListener("click", () => {
+                editingAddressCard = addressCard1;
+                fullNameInput.value = cardFullName1.textContent.trim();
+                phoneNumberInput.value = cardPhoneNumber1.textContent.trim();
+                fullAddressInput.value = cardFullAddress1.textContent.trim();
+            });
+
+            addressCard2.addEventListener("click", () => {
+                editingAddressCard = addressCard2;
+                fullNameInput.value = cardFullName2.textContent.trim();
+                phoneNumberInput.value = cardPhoneNumber2.textContent.trim();
+                fullAddressInput.value = cardFullAddress2.textContent.trim();
+            });
+
+            saveBtn.addEventListener("click", () => {
+                const fullName = fullNameInput.value.trim();
+                const fullAddress = fullAddressInput.value.trim();
+                const phoneNumber = phoneNumberInput.value.trim();
+
+                if (fullName && fullAddress && phoneNumber) {
+                    if (editingAddressCard === addressCard1) {
+                        cardFullName1.textContent = fullName;
+                        cardFullAddress1.textContent = fullAddress;
+                        cardPhoneNumber1.textContent = phoneNumber;
+                    } else if (editingAddressCard === addressCard2) {
+                        cardFullName2.textContent = fullName;
+                        cardFullAddress2.textContent = fullAddress;
+                        cardPhoneNumber2.textContent = phoneNumber;
+                    }
+
+                    const modal = bootstrap.Modal.getInstance(document.getElementById("addressModal"));
+                    modal.hide();
+                } else {
+                    alert("Please fill in all fields.");
+                }
+            });
+
+            setDefaultBtn.addEventListener("click", () => {
+                if (editingAddressCard) {
+                    addressCard1.classList.remove("default-address");
+                    addressCard2.classList.remove("default-address");
+
+                    editingAddressCard.classList.add("default-address");
+
+                    const defaultAddress = editingAddressCard === addressCard1 ?
+                        {
+                            fullName: cardFullName1.textContent.trim(),
+                            phoneNumber: cardPhoneNumber1.textContent.trim(),
+                            fullAddress: cardFullAddress1.textContent.trim()
+                        } :
+                        {
+                            fullName: cardFullName2.textContent.trim(),
+                            phoneNumber: cardPhoneNumber2.textContent.trim(),
+                            fullAddress: cardFullAddress2.textContent.trim()
+                        };
+                    localStorage.setItem("defaultAddress", JSON.stringify(defaultAddress));
+
+                    alert("Address set to default.");
+                }
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const saveBtn = document.getElementById("saveBtn");
+            const setDefaultBtn = document.getElementById("setDefaultBtn");
+
+            const fullNameInput = document.getElementById("fullName");
+            const phoneNumberInput = document.getElementById("phoneNumber");
+            const fullAddressInput = document.getElementById("fullAddress");
+
+            const addressCard1 = document.getElementById("addressCard1");
+            const addressCard2 = document.getElementById("addressCard2");
+
+            const cardFullName1 = document.getElementById("cardFullName1");
+            const cardFullName2 = document.getElementById("cardFullName2");
+            const cardFullAddress1 = document.getElementById("cardFullAddress1");
+            const cardFullAddress2 = document.getElementById("cardFullAddress2");
+
+            let editingAddressCard;
+
+            function loadSavedAddresses() {
+                const savedAddress1 = JSON.parse(localStorage.getItem("addressCard1"));
+                const savedAddress2 = JSON.parse(localStorage.getItem("addressCard2"));
+
+                if (savedAddress1) {
+                    cardFullName1.textContent = savedAddress1.fullName || "Full Name";
+                    cardPhoneNumber1.textContent = savedAddress1.phoneNumber || "Phone Number";
+                    cardFullAddress1.textContent = savedAddress1.fullAddress || "Address";
+                }
+
+                if (savedAddress2) {
+                    cardFullName2.textContent = savedAddress2.fullName || "Full Name";
+                    cardPhoneNumber2.textContent = savedAddress2.phoneNumber || "Phone Number";
+                    cardFullAddress2.textContent = savedAddress2.fullAddress || "Address";
+                }
+            }
+
+            saveBtn.addEventListener("click", () => {
+                const fullName = fullNameInput.value.trim();
+                const phoneNumber = phoneNumberInput.value.trim();
+                const fullAddress = fullAddressInput.value.trim();
+
+                if (fullName && phoneNumber && fullAddress) {
+                    const addressData = {
+                        fullName: fullName,
+                        phoneNumber: phoneNumber,
+                        fullAddress: fullAddress,
+                    };
+
+                    if (editingAddressCard === addressCard1) {
+                        cardFullName1.textContent = fullName;
+                        cardPhoneNumber1.textContent = phoneNumber;
+                        cardFullAddress1.textContent = fullAddress;
+
+                        localStorage.setItem("addressCard1", JSON.stringify(addressData));
+                    } else if (editingAddressCard === addressCard2) {
+                        cardFullName2.textContent = fullName;
+                        cardPhoneNumber2.textContent = phoneNumber;
+                        cardFullAddress2.textContent = fullAddress;
+
+                        localStorage.setItem("addressCard2", JSON.stringify(addressData));
+                    }
+                    const modal = bootstrap.Modal.getInstance(document.getElementById("addressModal"));
+                    modal.hide();
+                } else {
+                    alert("Please fill in all fields.");
+                }
+            });
+
+            addressCard1.addEventListener("click", () => {
+                editingAddressCard = addressCard1;
+                const savedAddress1 = JSON.parse(localStorage.getItem("addressCard1"));
+                fullNameInput.value = savedAddress1?.fullName || "";
+                phoneNumberInput.value = savedAddress1?.phoneNumber || "";
+                fullAddressInput.value = savedAddress1?.fullAddress || "";
+            });
+
+            addressCard2.addEventListener("click", () => {
+                editingAddressCard = addressCard2;
+                const savedAddress2 = JSON.parse(localStorage.getItem("addressCard2"));
+                fullNameInput.value = savedAddress2?.fullName || "";
+                phoneNumberInput.value = savedAddress2?.phoneNumber || "";
+                fullAddressInput.value = savedAddress2?.fullAddress || "";
+            });
+
+            loadSavedAddresses();
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const customizedItem = JSON.parse(localStorage.getItem("customizedItem"));
+
+            if (!customizedItem) {
+                console.warn("No customized item found in localStorage.");
+                return;
+            }
+
+            const orderSummaryBody = document.querySelector(".table tbody");
+            orderSummaryBody.innerHTML = "";
+
+            const numericPrice = parseFloat(customizedItem.price.replace(/₱/g, ""));
+
+            const row = document.createElement("tr");
+            row.innerHTML = `
+            <td>
+                ${customizedItem.name} (${customizedItem.size}, ${customizedItem.gender})
+                <br>
+                <strong>Jersey Number:</strong> ${customizedItem.jerseyNumber}
+                <br>
+                <strong>Surname:</strong> ${customizedItem.surname}
+                <br>
+                <strong>Team Name:</strong> ${customizedItem.teamName}
+                <br>
+                <strong>Logo Description:</strong> ${customizedItem.logoDescription}
+            </td>
+            <td>₱${numericPrice.toFixed(2)}</td>
+            <td>${customizedItem.quantity}</td>
+        `;
+
+            orderSummaryBody.appendChild(row);
+
+            const totalRow = document.createElement("tr");
+            const totalPrice = numericPrice * customizedItem.quantity;
+            totalRow.innerHTML = `
+            <th>Total</th>
+            <th colspan="2">₱${totalPrice.toFixed(2)}</th>
+        `;
+            orderSummaryBody.appendChild(totalRow);
+
+            console.log("Customized item displayed:", customizedItem);
+        });
+
+        window.addEventListener("beforeunload", function () {
+            localStorage.removeItem("customizedItem");
+            console.log("Customized item removed from localStorage.");
+        });
+    </script>
+
+
+    <script>
+        document.querySelector('.btn-success').addEventListener('click', function () {
+            const defaultAddress = JSON.parse(localStorage.getItem('defaultAddress')) || null;
+
+            if (!defaultAddress || !defaultAddress.fullAddress) {
+                alert('Please select an address.');
+                return;
+            }
+
+            fetch('profile.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    address: defaultAddress
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        console.log('Address saved successfully:', data);
+                    } else {
+                        console.error('Error saving address:', data.message);
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        });
+
+        const orderId = `ORD-${Date.now()}`;
+        const total = cart.reduce((sum, item) => sum + parseFloat(item.price.replace('₱', '')) * item.quantity, 0);
+
+        const orderDetails = {
+            id: orderId,
+            items: cart,
+            address: defaultAddress,
+            totalPrice: `₱${total.toFixed(2)}`
+        };
+
+        const orders = JSON.parse(localStorage.getItem('orders')) || [];
+        orders.push(orderDetails);
+        localStorage.setItem('orders', JSON.stringify(orders));
+
+        window.location.href = `done.html?orderId=${orderId}`;
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const addressCards = document.querySelectorAll(".address-card");
+
+            addressCards.forEach(card => {
+                card.addEventListener("click", function () {
+                    const fullName = this.querySelector("strong").innerText.trim();
+                    const phoneNumber = this.querySelector("span:nth-of-type(1)").innerText.trim();
+                    const fullAddress = this.querySelector("span:nth-of-type(2)").innerText.trim();
+
+                    const selectedAddress = {
+                        fullName: fullName,
+                        phoneNumber: phoneNumber,
+                        fullAddress: fullAddress
+                    };
+
+                    localStorage.setItem("defaultAddress", JSON.stringify(selectedAddress));
+
+                    addressCards.forEach(c => c.classList.remove("default-address"));
+                    this.classList.add("default-address");
+
+                    console.log("Selected address saved:", selectedAddress);
+                });
+            });
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

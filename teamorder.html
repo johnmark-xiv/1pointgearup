@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jersey Order</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  <style>
+    @font-face {
+      font-family: iimpact;
+      src: url(fonts/impact.ttf);
+    }
+
+    .navbar-brand {
+      font-family: iimpact;
+    }
+
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .navbar {
+      background-image: url('./images/bgh3b.jpg');
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="landing.html">
+        <img src="./images/11.png" alt="1Point Gear Up">
+        1Point Gear Up
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#aboutModal">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#featuresModal">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#contactModal">Contact Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+              aria-expanded="false">
+              Welcome!
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item" href="./profile.html">Profile</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./cart.html">My Cart</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./logout.html">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+
+  <div class="container my-5">
+    <h1 class="text-center mb-4" style="font-family: iimpact;">Order
+      Custom Jersey for Team</h1>
+    <div class="mb-4">
+      <label for="teamName" class="form-label">Team Name</label>
+      <input type="text" id="teamName" class="form-control" placeholder="Enter your team name" required>
+    </div>
+    <div class="mb-4">
+      <label for="uploadDesign" class="form-label">Upload Design</label>
+      <input type="file" id="uploadDesign" class="form-control" required>
+    </div>
+    <div class="mb-4">
+      <label for="uploadLogo" class="form-label">Upload Logo</label>
+      <input type="file" id="uploadLogo" class="form-control" required>
+    </div>
+
+    <h3 style="text-align: center;">Line-Up</h3>
+
+    <!-- adults table -->
+    <h2>Adults</h2>
+    <div class="mb-3 row">
+      <input type="text" id="adultSurname" class="form-control col" placeholder="Surname">
+      <input type="number" id="adultJerseyNumber" class="form-control col" placeholder="Jersey Number">
+      <input type="text" id="adultGender" class="form-control col" placeholder="Gender">
+      <select id="adultSize" class="form-select col">
+        <option value="" disabled selected>Size</option>
+        <option>XS</option>
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+        <option>2XL</option>
+        <option>3XL</option>
+      </select>
+      <button id="addAdult" class="btn btn-primary col">Add</button>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Surname</th>
+          <th>Jersey Number</th>
+          <th>Gender</th>
+          <th>Size</th>
+          <th>Remove Item</th>
+        </tr>
+      </thead>
+      <tbody id="adultTable">
+        <!-- insertan -->
+      </tbody>
+    </table>
+
+    <!-- kids table -->
+    <h2>Kids</h2>
+    <div class="mb-3 row">
+      <input type="text" id="kidSurname" class="form-control col" placeholder="Surname">
+      <input type="number" id="kidJerseyNumber" class="form-control col" placeholder="Jersey Number">
+      <input type="text" id="kidGender" class="form-control col" placeholder="Gender">
+      <select id="kidSize" class="form-select col">
+        <option value="" disabled selected>Size</option>
+        <option>XS</option>
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+        <option>2XL</option>
+        <option>3XL</option>
+      </select>
+      <select id="kidAge" class="form-select col">
+        <option value="" disabled selected>Age</option>
+        <option>1</option>
+        <option>3</option>
+        <option>5</option>
+        <option>7</option>
+        <option>10</option>
+      </select>
+      <button id="addKid" class="btn btn-primary col">Add</button>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Surname</th>
+          <th>Jersey Number</th>
+          <th>Gender</th>
+          <th>Size</th>
+          <th>Age</th>
+          <th>Remove Item</th>
+        </tr>
+      </thead>
+      <tbody id="kidTable">
+        <!-- insertan -->
+      </tbody>
+    </table>
+
+    <div class="text-end mt-4">
+      <button id="checkoutButton" class="btn btn-success">Checkout</button>
+    </div>
+  </div>
+
+  <footer class="bg-light py-3 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="text-muted">&copy; 2024 1Point Gear Up All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-right">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+            <li class="list-inline-item"><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <a href="https://www.facebook.com/1pointsportswear" target="_blank">
+          <i class="fab fa-facebook fa-2x"></i>
+        </a>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#locationModal" style="margin-left: 10px;">
+          <i class="fas fa-map-marker-alt fa-2x"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- modal ng loc -->
+  <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="locationModalLabel">Our Location</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>We are located at:</p>
+          <p><strong>General Malvar Avenue, One Point Sportswear, Barangay 04, City of Sto. Tomas, Batangas</strong></p>
+          <a href="https://maps.app.goo.gl/NKKhA3Y4MMJLHZh87" target="_blank" class="btn btn-primary">
+            View on Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('addAdult').addEventListener('click', () => {
+        const surname = document.getElementById('adultSurname').value;
+        const jerseyNumber = document.getElementById('adultJerseyNumber').value;
+        const gender = document.getElementById('adultGender').value;
+        const size = document.getElementById('adultSize').value;
+
+
+        if (surname && jerseyNumber && gender && size) {
+          const table = document.getElementById('adultTable');
+          const row = document.createElement('tr');
+          row.innerHTML = `
+          <td>${surname}</td>
+          <td>${jerseyNumber}</td>
+          <td>${gender}</td>
+          <td>${size}</td>
+          <td><button class="btn btn-danger btn-sm remove-btn">Remove</button></td>
+        `;
+          table.appendChild(row);
+
+          document.getElementById('adultSurname').value = '';
+          document.getElementById('adultJerseyNumber').value = '';
+          document.getElementById('adultGender').value = '';
+          document.getElementById('adultSize').value = '';
+
+          row.querySelector('.remove-btn').addEventListener('click', () => {
+            row.remove();
+          });
+        }
+      });
+
+      document.getElementById('addKid').addEventListener('click', () => {
+        const surname = document.getElementById('kidSurname').value;
+        const jerseyNumber = document.getElementById('kidJerseyNumber').value;
+        const gender = document.getElementById('kidGender').value;
+        const size = document.getElementById('kidSize').value;
+        const age = document.getElementById('kidAge').value;
+
+        if (surname && jerseyNumber && gender && size) {
+          const table = document.getElementById('kidTable');
+          const row = document.createElement('tr');
+          row.innerHTML = `
+          <td>${surname}</td>
+          <td>${jerseyNumber}</td>
+          <td>${gender}</td>
+          <td>${size}</td>
+          <td>${age}</td>
+          <td><button class="btn btn-danger btn-sm remove-btn">Remove</button></td>
+        `;
+          table.appendChild(row);
+
+          document.getElementById('kidSurname').value = '';
+          document.getElementById('kidJerseyNumber').value = '';
+          document.getElementById('kidGender').value = '';
+          document.getElementById('kidSize').value = '';
+          document.getElementById('kidAge').value = '';
+
+          row.querySelector('.remove-btn').addEventListener('click', () => {
+            row.remove();
+          });
+        }
+      });
+
+      document.getElementById('checkoutButton').addEventListener('click', () => {
+        alert('Proceeding to checkout!');
+      });
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
